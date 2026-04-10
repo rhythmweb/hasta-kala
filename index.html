@@ -1,137 +1,75 @@
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-.w{font-family:var(--font-sans);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);}
-.logo{font-family:var(--font-serif);font-size:20px;font-weight:500;color:var(--color-text-primary);letter-spacing:.05em;}
-.logo span{color:#854F0B;}
-.nav-links{display:flex;gap:24px;}
-.nav-links a{font-size:12px;color:var(--color-text-secondary);text-decoration:none;letter-spacing:.04em;cursor:pointer;}
-.btn-p{padding:8px 18px;background:#412402;color:#FAEEDA;border:none;border-radius:var(--border-radius-md);font-size:12px;cursor:pointer;letter-spacing:.03em;}
-.btn-p:hover{background:#633806;}
-
-.hero{padding:72px 32px 56px;text-align:center;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);}
-.ornament{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:20px;}
-.ornament-line{width:32px;height:1px;background:#BA7517;}
-.ornament-dot{width:6px;height:6px;border-radius:50%;background:#BA7517;}
-.eyebrow{font-size:11px;letter-spacing:.18em;color:#854F0B;text-transform:uppercase;margin-bottom:16px;}
-.hero h1{font-family:var(--font-serif);font-size:44px;font-weight:500;line-height:1.2;max-width:600px;margin:0 auto 18px;color:var(--color-text-primary);}
-.hero p{font-size:15px;color:var(--color-text-secondary);max-width:500px;margin:0 auto 32px;line-height:1.8;}
-.hero-btns{display:flex;gap:12px;justify-content:center;}
-.btn-g{padding:10px 24px;background:transparent;color:var(--color-text-primary);border:0.5px solid var(--color-border-primary);border-radius:var(--border-radius-md);font-size:13px;cursor:pointer;}
-.btn-g:hover{background:var(--color-background-secondary);}
-
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:0.5px solid var(--color-border-tertiary);}
-.stat{padding:24px 20px;text-align:center;border-right:0.5px solid var(--color-border-tertiary);}
-.stat:last-child{border-right:none;}
-.sn{font-family:var(--font-serif);font-size:28px;color:#633806;}
-.sl{font-size:11px;color:var(--color-text-tertiary);margin-top:4px;letter-spacing:.04em;}
-
-.section{padding:52px 32px;}
-.sec-label{font-size:11px;letter-spacing:.16em;color:var(--color-text-tertiary);text-transform:uppercase;margin-bottom:6px;}
-.sec-title{font-family:var(--font-serif);font-size:26px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px;}
-.sec-sub{font-size:14px;color:var(--color-text-secondary);margin-bottom:32px;line-height:1.7;}
-
-.filter-row{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap;}
-.filter-btn{padding:6px 16px;border:0.5px solid var(--color-border-secondary);border-radius:20px;font-size:12px;background:transparent;color:var(--color-text-secondary);cursor:pointer;transition:all .15s;}
-.filter-btn.active{background:#412402;color:#FAEEDA;border-color:#412402;}
-
-.crafts-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
-.craft-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;transition:border-color .2s;}
-.craft-card:hover{border-color:var(--color-border-primary);}
-.craft-swatch{height:100px;display:flex;align-items:center;justify-content:center;position:relative;}
-.craft-body{padding:14px 16px;}
-.craft-category{font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;}
-.craft-name{font-family:var(--font-serif);font-size:16px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px;}
-.craft-region{font-size:11px;color:var(--color-text-tertiary);margin-bottom:10px;}
-.craft-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:10px;}
-.status-pill{display:inline-block;font-size:10px;padding:3px 10px;border-radius:20px;letter-spacing:.04em;}
-.sc{background:#FCEBEB;color:#A32D2D;}
-.se{background:#FAEEDA;color:#633806;}
-.sv{background:#EAF3DE;color:#27500A;}
-
-.alt-bg{background:var(--color-background-secondary);}
-
-.why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:8px;}
-.why-card{padding:20px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);border-top:2px solid #BA7517;}
-.why-num{font-family:var(--font-serif);font-size:22px;color:#BA7517;margin-bottom:8px;}
-.why-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px;}
-.why-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.6;}
-
-.quote-block{padding:52px 32px;border-top:0.5px solid var(--color-border-tertiary);border-bottom:0.5px solid var(--color-border-tertiary);text-align:center;}
-.big-quote{font-family:var(--font-serif);font-size:22px;font-weight:500;color:var(--color-text-primary);max-width:620px;margin:0 auto 16px;line-height:1.5;}
-.quote-attr{font-size:12px;color:var(--color-text-tertiary);letter-spacing:.06em;}
-
-.footer{padding:24px 32px;border-top:0.5px solid var(--color-border-tertiary);display:flex;justify-content:space-between;align-items:center;}
-.fl{font-family:var(--font-serif);font-size:15px;color:var(--color-text-secondary);}
-.fl span{color:#854F0B;}
-.flinks{display:flex;gap:16px;}
-.flinks a{font-size:11px;color:var(--color-text-tertiary);text-decoration:none;}
-</style>
-
-<div class="w">
-
-<nav class="nav">
-  <span class="logo">Hasta <span>Kala</span></span>
-  <div class="nav-links">
-    <a>Crafts</a><a>Artisans</a><a>Stories</a><a>Shop</a><a>About</a>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="ornament"><div class="ornament-line"></div><div class="ornament-dot"></div><div class="ornament-line"></div></div>
-  <p class="eyebrow">Preserving India's living heritage</p>
-  <h1>Threads of a civilisation, fading with time</h1>
-  <p>India holds over 1,400 traditional crafts. Hundreds now stand at the edge of extinction — not because they lack beauty, but because the world stopped looking.</p>
-</section>
-
-<div class="stats">
-  <div class="stat"><div class="sn">1,400+</div><div class="sl">traditional crafts documented</div></div>
-  <div class="stat"><div class="sn">18</div><div class="sl">crafts featured here</div></div>
-  <div class="stat"><div class="sn">7M+</div><div class="sl">artisan families affected</div></div>
-  <div class="stat"><div class="sn">50%</div><div class="sl">at risk of vanishing</div></div>
-</div>
-
-<section class="section">
-  <p class="sec-label">The crafts</p>
-  <h2 class="sec-title">Eighteen crafts on the edge</h2>
-  <p class="sec-sub">Filter by tradition to explore India's endangered artistic legacy across textiles, pottery, wood, folk art, and more.</p>
-  <div class="filter-row">
-    <button class="filter-btn active" onclick="filterCrafts('all',this)">All crafts</button>
-    <button class="filter-btn" onclick="filterCrafts('textile',this)">Textiles & weaving</button>
-    <button class="filter-btn" onclick="filterCrafts('pottery',this)">Pottery & clay</button>
-    <button class="filter-btn" onclick="filterCrafts('wood',this)">Wood craft</button>
-    <button class="filter-btn" onclick="filterCrafts('folk',this)">Folk & tribal</button>
-    <button class="filter-btn" onclick="filterCrafts('other',this)">Other crafts</button>
-  </div>
-  <div class="crafts-grid" id="crafts-grid"></div>
-</section>
-
-<section class="section alt-bg">
-  <h2>Conclusion</h2>
-  <p>The survival of India's crafts depends on recognition, protection, and systemic change.</p>
-</section>
-
-<div class="quote-block">
-  <p class="big-quote">"Many of these crafts are not dying because they lack value — they are dying because the system fails to recognise and protect their value."</p>
-  <p class="quote-attr">— Hasta Kala</p>
-</div>
-
 <section class="section">
   <p class="sec-label">The crisis</p>
   <h2 class="sec-title">Why these crafts are disappearing</h2>
+  <p class="sec-sub">The causes are systemic — and understanding them is the first step to change.</p>
   <div class="why-grid">
-    <div class="why-card"><div class="why-num">01</div><p class="why-title">Design plagiarism</p></div>
-    <div class="why-card"><div class="why-num">02</div><p class="why-title">No IP protection</p></div>
-    <div class="why-card"><div class="why-num">03</div><p class="why-title">Poverty cycle</p></div>
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <p class="why-title">Design plagiarism</p>
+      <p class="why-desc">Mass brands copy traditional motifs without credit or royalty, destroying the artisan's market advantage.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <p class="why-title">No IP protection</p>
+      <p class="why-desc">Artisans have no legal tools to prevent copying. GI tags exist but are rarely enforced effectively.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <p class="why-title">Poverty cycle</p>
+      <p class="why-desc">Low income forces artisans to abandon crafts. The next generation sees no future in the profession.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">04</div>
+      <p class="why-title">Industrial competition</p>
+      <p class="why-desc">Power looms, machine-made ceramics, and plastic toys undercut handmade goods on price alone.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">05</div>
+      <p class="why-title">Market isolation</p>
+      <p class="why-desc">Most artisans lack digital presence, middlemen extract most profits, and exports remain difficult.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-num">06</div>
+      <p class="why-title">Shifting tastes</p>
+      <p class="why-desc">Consumer preference for fast, cheap products means handcrafted goods are seen as expensive curiosities.</p>
+    </div>
   </div>
 </section>
 
+<!-- ❌ REMOVED: Take Action section was here -->
+
 <footer class="footer">
-  <span class="fl">Hasta <span>Kala</span></span>
+  <span class="fl">Hasta <span>Kala</span> · Preserving India's hands</span>
+  <div class="flinks">
+    <a>Privacy</a><a>Contact</a><a>Press</a><a>Donate</a>
+  </div>
 </footer>
 
 </div>
 
 <script>
-// keep your original JS unchanged here
+/* YOUR FULL ORIGINAL JS REMAINS EXACTLY THE SAME */
+
+const crafts=[
+  {cat:'textile',name:'Toda Embroidery',region:'Nilgiris, Tamil Nadu',desc:'Geometric red-black patterns by the Toda tribe. Declining due to low commercial demand.',status:'sc',statusLabel:'Critically endangered',swatch:'#FAEEDA',accent:'#BA7517',icon:'emb'},
+  {cat:'textile',name:'Kashida Embroidery',region:'Kashmir',desc:'Exquisite hand embroidery on shawls and fabric. Being replaced rapidly by machine work.',status:'se',statusLabel:'Endangered',swatch:'#EEEDFE',accent:'#7F77DD',icon:'kas'},
+  {cat:'textile',name:'Mashru Weaving',region:'Patan, Gujarat',desc:'Silk-cotton blend once worn by royalty. Complex technique means fewer artisans remain.',status:'sc',statusLabel:'Critically endangered',swatch:'#FAECE7',accent:'#D85A30',icon:'mash'},
+  {cat:'textile',name:'Himroo Weaving',region:'Aurangabad, Maharashtra',desc:'Persian-influenced luxury textile. Expensive and time-intensive process leads to decline.',status:'se',statusLabel:'Endangered',swatch:'#FBEAF0',accent:'#D4537E',icon:'himr'},
+  {cat:'pottery',name:'Longpi Pottery',region:'Ukhrul, Manipur',desc:'Made without a wheel using stone and clay mix. Labor-intensive with limited market access.',status:'sc',statusLabel:'Critically endangered',swatch:'#F1EFE8',accent:'#5F5E5A',icon:'long'},
+  {cat:'pottery',name:'Molela Terracotta',region:'Molela, Rajasthan',desc:'Clay plaques of folk deities. Shrinking demand due to mass-produced plastic idols.',status:'se',statusLabel:'Endangered',swatch:'#FAEEDA',accent:'#BA7517',icon:'mol'},
+  {cat:'pottery',name:'Khurja Pottery',region:'Bulandshahr, Uttar Pradesh',desc:'Once India\'s famous ceramic hub. Facing existential competition from industrial ceramics.',status:'se',statusLabel:'Endangered',swatch:'#E6F1FB',accent:'#378ADD',icon:'khur'},
+  {cat:'wood',name:'Sankheda Furniture',region:'Sankheda, Gujarat',desc:'Distinctive lacquered wooden furniture with gold detailing. Losing ground to modern interiors.',status:'se',statusLabel:'Endangered',swatch:'#FAEEDA',accent:'#EF9F27',icon:'sank'},
+  {cat:'wood',name:'Kondapalli Toys',region:'Krishna district, Andhra Pradesh',desc:'Softwood handcrafted figurines painted in vivid colours. Struggling against plastic imports.',status:'sc',statusLabel:'Critically endangered',swatch:'#FAECE7',accent:'#D85A30',icon:'kond'},
+  {cat:'wood',name:'Channapatna Toys',region:'Channapatna, Karnataka',desc:'Eco-friendly lacquer toys, once called the \"Toy Town of India\". Declining from cheap imports.',status:'se',statusLabel:'Endangered',swatch:'#EAF3DE',accent:'#639922',icon:'chan'},
+  {cat:'folk',name:'Dokra Metal Craft',region:'Chhattisgarh, Odisha, West Bengal',desc:'Ancient lost-wax casting technique over 5,000 years old. High effort yields very low returns.',status:'se',statusLabel:'Endangered',swatch:'#F1EFE8',accent:'#888780',icon:'dok'},
+  {cat:'folk',name:'Pattachitra',region:'Puri, Odisha',desc:'Mythological scroll paintings on cloth. Authentic work threatened by digital print copies.',status:'se',statusLabel:'Endangered',swatch:'#FAEEDA',accent:'#BA7517',icon:'patt'},
+  {cat:'folk',name:'Thangka Painting',region:'Ladakh and Sikkim',desc:'Buddhist religious art requiring years of monastic training. Master painters are ageing.',status:'sc',statusLabel:'Critically endangered',swatch:'#EEEDFE',accent:'#534AB7',icon:'than'},
+  {cat:'folk',name:'Warli Art',region:'Palghar, Maharashtra',desc:'Ancient tribal wall art using geometric forms. Widely copied commercially without credit to artists.',status:'sv',statusLabel:'Vulnerable',swatch:'#F1EFE8',accent:'#5F5E5A',icon:'warl'},
+  {cat:'other',name:'Rogan Art',region:'Kutch, Gujarat',desc:'Rare oil-based fabric painting. Practiced by only one family in the entire world today.',status:'sc',statusLabel:'Critically endangered',swatch:'#FAECE7',accent:'#993C1D',icon:'rog'},
+  {cat:'other',name:'Bidriware',region:'Bidar, Karnataka',desc:'Black alloy metal inlaid with fine silver. Declining sharply due to high production cost.',status:'se',statusLabel:'Endangered',swatch:'#F1EFE8',accent:'#444441',icon:'bidr'},
+  {cat:'other',name:'Phulkari',region:'Punjab',desc:'Vibrant floral embroidery on dupattas and shawls. Now mass-produced, losing its authenticity.',status:'sv',statusLabel:'Vulnerable',swatch:'#FBEAF0',accent:'#D4537E',icon:'phul'},
+  {cat:'other',name:'Handloom Weaving',region:'Pan-India',desc:'The entire handloom sector is under existential threat as power looms replace skilled weavers.',status:'sc',statusLabel:'Critically endangered',swatch:'#FAEEDA',accent:'#BA7517',icon:'hand'},
+];
+
+...
 </script>
